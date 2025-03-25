@@ -2940,7 +2940,7 @@ async function handleGameWin(req, res) {
     console.log("k3Info", k3Info);
 
     // taking the value
-    const value = payload?.value;
+    let value = payload?.value;
     console.log("value---", value);
 
     // checking if the game_type is not within the array values
@@ -2948,6 +2948,22 @@ async function handleGameWin(req, res) {
       !["total", "three-same", "unlike", "two-same"].includes(payload?.game_type)
     ) {
       throw new Error("Invalid or empty bet values.");
+    }
+    
+    // checking which game_type make the bet data
+    if("unlike" === payload?.game_type){
+        if("win" === value || "lose" === value){
+          value = "@u@";
+        }
+        else if(value.length === 5){
+          value = value + "@y@";  // appending the string with @y@
+        }else if(payload?.value.length === 3){
+          value = "@y@" + payload?.value;  // appending the string with @y@
+        }
+    }else if("three-same" === payload?.game_type){ // condition is for three-same
+      if("3" === value){
+         value = "@3"
+      }
     }
 
     // Winning the bet
@@ -2997,9 +3013,7 @@ async function handleGameWin(req, res) {
       );
     }
 
-    res
-      .status(200)
-      .json({ success: true, message: "Game win updated successfully" });
+    res.status(200).json({ success: true, message: "Game win updated successfully" });
   } catch (err) {
     console.error("Error updating user k3_result table:", err.message);
     res.status(500).json({ success: false, message: "Internal server error" });
