@@ -328,7 +328,8 @@
                             <div class="card-body">
                               <div class="form-group">
                                 <div>
-                                  <p>In the input box the input like "11@" or "22#@"</p>
+                                  <p>In the input box the input for first game 11 or 66 or 44</p>
+                                  <p>In the input box the input for second game 11# to 66# and 1# to 6#</p>
                                 </div>
                                 <label for="twoSomeInput">Enter Numbers:</label>
                                 <input type="text" class="form-control" id="twoSomeInput"
@@ -343,7 +344,8 @@
                           <div class="tab-pane fade" id="three-some">
                             <div class="card-body">
                               <div class="form-group">
-                                <p>In the input box the input like "111@" or "@3"</p>
+                                <p>In the input box the first game input like "111" or "333" like this</p>
+                                <p>In the input box the second game input like win / loss</p>
                                 <label for="threeSomeInput">Enter Numbers:</label>
                                 <input type="text" class="form-control" id="threeSomeInput"
                                   placeholder="Enter the result">
@@ -470,7 +472,7 @@
           "game": 1,
           "join_bet": 2,
           "game_type": "two-same",
-          "value": twoSomeInput
+          "value": `${twoSomeInput}@`
         })
       })
         .then(response => response.json())
@@ -505,7 +507,7 @@
           "game": 1,
           "join_bet": 3,
           "game_type": "three-same",
-          "value": threeSomeInput
+          "value": `${threeSomeInput}@`
         })
       })
         .then(response => response.json())
@@ -541,7 +543,7 @@
           "game": 1,
           "join_bet": 4,
           "game_type": "unlike",
-          "value": differentInput
+          "value": `${differentInput}@`
         })
       })
         .then(response => response.json())
