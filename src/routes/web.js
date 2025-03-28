@@ -880,6 +880,14 @@ router.post(
 
 
 /****************************Admin Winning game route************************ */
+
+router.get(  // For 5D game bet list
+  "/api/webapi/admin/get_bet_list_5D/:game",
+  adminController.middlewareAdminController,
+  adminController.getBetList5D,
+); 
+
+
 router.post(
   "/api/webapi/admin/handle_game_win",
   adminController.middlewareAdminController,
@@ -891,6 +899,7 @@ router.post(  // For 5D game win
   adminController.middlewareAdminController,
   adminController.handleGameWin5D,
 ); // register
+
 
 
 
