@@ -590,6 +590,28 @@
       });
     });
   </script>
+ <!-- <script>
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("call.....");
+  
+    function fetchData() {
+        console.log("Fetching data...");
+        fetch("/api/webapi/admin/get_bet_list_5D/1") // Replace with your API URL
+            .then(response => response.json())
+            .then(data => console.log("API Response:", data))
+            .catch(error => console.error("Error fetching data:", error));
+    }
+    
+    setTimeout(() => {
+        console.log("Initial fetch after 2 seconds");
+        fetchData();
+        setInterval(() => {
+            console.log("Fetching data every 2 seconds");
+            fetchData();
+        }, 2000); // Call API every 2 seconds
+    }, 2000);
+});
+ </script> -->
 </body>
 
 </html>
