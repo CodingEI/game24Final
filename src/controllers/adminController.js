@@ -3377,8 +3377,8 @@ async function getBetListk3Total(req,res){
 
     // Fetching the period
     const [all_k3_bet] = await connection.query(
-      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
-      [k3Info?.period, game] // Ensure stage and game variables are defined
+      `SELECT * FROM result_k3 WHERE stage = ? AND game = ? AND typeGame = ?`,
+      [k3Info?.period, game, "total"] // Ensure stage and game variables are defined
     );
   
 
@@ -3616,8 +3616,8 @@ async function getBetListk3TwoSame(req,res){
 
     // Fetching the period
     const [all_k3_bet] = await connection.query(
-      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
-      [k3Info?.period, game] // Ensure stage and game variables are defined
+      `SELECT * FROM result_k3 WHERE stage = ? AND game = ? AND typeGame = ?`,
+      [k3Info?.period, game , "two-same"] // Ensure stage and game variables are defined
     );
   
 
@@ -3745,7 +3745,7 @@ async function getBetListk3TwoSame(req,res){
     // sending the response with the bet data
     res
     .status(200)
-    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+    .json({ success: true, bet_data: total_bet_data, message: "Bet data fetched successfully" });
 
   } catch (err) {
     console.error("Error fetch user result_5d table:", err.message);
@@ -3814,8 +3814,8 @@ async function getBetListk3ThreeSame(req,res){
 
     // Fetching the period
     const [all_k3_bet] = await connection.query(
-      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
-      [k3Info?.period, game] // Ensure stage and game variables are defined
+      `SELECT * FROM result_k3 WHERE stage = ? AND game = ? AND typeGame = ?`,
+      [k3Info?.period, game , "three-same"] // Ensure stage and game variables are defined
     );
   
 
@@ -3878,7 +3878,7 @@ async function getBetListk3ThreeSame(req,res){
     // sending the response with the bet data
     res
     .status(200)
-    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+    .json({ success: true, bet_data: total_bet_data, message: "Bet data fetched successfully" });
 
   } catch (err) {
     console.error("Error fetch user result_5d table:", err.message);
@@ -3948,8 +3948,8 @@ async function getBetListk3Unlike(req,res){
 
     // Fetching the period
     const [all_k3_bet] = await connection.query(
-      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
-      [k3Info?.period, game] // Ensure stage and game variables are defined
+      `SELECT * FROM result_k3 WHERE stage = ? AND game = ? AND typeGame = ?`,
+      [k3Info?.period, game , "unlike"] // Ensure stage and game variables are defined
     );
   
      let total_bet_data = {}
@@ -3971,7 +3971,7 @@ async function getBetListk3Unlike(req,res){
     // sending the response with the bet data
     res
     .status(200)
-    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+    .json({ success: true, bet_data: total_bet_data, message: "Bet data fetched successfully" });
 
   } catch (err) {
     console.error("Error fetch user result_5d table:", err.message);
