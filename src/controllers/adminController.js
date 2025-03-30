@@ -3145,25 +3145,25 @@ async function getBetList5D(req,res){
      *                                         "even_total_bet_amount" : 0,
      *                                       },
      *                      "number_game" :  {
-     *                                         "zero_bet_total_amount" : 0,
+     *                                         "zero_bet_total_count" : 0,
      *                                         "zero_total_bet_amount" : 0,
      *                                         "one_bet_total_count" : 0,
      *                                         "one_total_bet_amount" : 0,
      *                                         "two_bet_total_count" : 0,
      *                                         "two_total_bet_amount" : 0,
-     *                                         "three_bet_total_amount" : 0,
+     *                                         "three_bet_total_count" : 0,
      *                                         "three_total_bet_amount" : 0,
-     *                                         "four_bet_total_amount" : 0,
+     *                                         "four_bet_total_count" : 0,
      *                                         "four_total_bet_amount" : 0,
-     *                                         "five_bet_total_amount" : 0,
+     *                                         "five_bet_total_count" : 0,
      *                                         "five_total_bet_amount" : 0,
-     *                                         "six_bet_total_amount" : 0,
+     *                                         "six_bet_total_count" : 0,
      *                                         "six_total_bet_amount" : 0,
-     *                                         "seven_bet_total_amount" : 0,
+     *                                         "seven_bet_total_count" : 0,
      *                                         "seven_total_bet_amount" : 0,
-     *                                         "eight_bet_total_amount" : 0,
+     *                                         "eight_bet_total_count" : 0,
      *                                         "eight_total_bet_amount" : 0,
-     *                                         "nine_bet_total_amount" : 0,
+     *                                         "nine_bet_total_count" : 0,
      *                                         "nine_total_bet_amount" : 0,
      *                                       },
      *                  }
@@ -3192,25 +3192,25 @@ async function getBetList5D(req,res){
                                                "even_total_bet_amount" : 0,
                                              },
                             "number_game" :  {
-                                               "zero_bet_total_amount" : 0,
+                                               "zero_bet_total_count" : 0,
                                                "zero_total_bet_amount" : 0,
                                                "one_bet_total_count" : 0,
                                                "one_total_bet_amount" : 0,
                                                "two_bet_total_count" : 0,
                                                "two_total_bet_amount" : 0,
-                                               "three_bet_total_amount" : 0,
+                                               "three_bet_total_count" : 0,
                                                "three_total_bet_amount" : 0,
-                                               "four_bet_total_amount" : 0,
+                                               "four_bet_total_count" : 0,
                                                "four_total_bet_amount" : 0,
-                                               "five_bet_total_amount" : 0,
+                                               "five_bet_total_count" : 0,
                                                "five_total_bet_amount" : 0,
-                                               "six_bet_total_amount" : 0,
+                                               "six_bet_total_count" : 0,
                                                "six_total_bet_amount" : 0,
-                                               "seven_bet_total_amount" : 0,
+                                               "seven_bet_total_count" : 0,
                                                "seven_total_bet_amount" : 0,
-                                               "eight_bet_total_amount" : 0,
+                                               "eight_bet_total_count" : 0,
                                                "eight_total_bet_amount" : 0,
-                                               "nine_bet_total_amount" : 0,
+                                               "nine_bet_total_count" : 0,
                                                "nine_total_bet_amount" : 0,
                                              },
                         }
@@ -3237,7 +3237,7 @@ async function getBetList5D(req,res){
       }
       // For number game
       else if("0" === each_bet?.bet){
-        bet_data["number_game"]["zero_bet_total_amount"] += 1;
+        bet_data["number_game"]["zero_bet_total_count"] += 1;
         bet_data["number_game"]["zero_total_bet_amount"] += each_bet?.money;
       }
       else if("1" === each_bet?.bet){
@@ -3249,31 +3249,31 @@ async function getBetList5D(req,res){
         bet_data["number_game"]["two_total_bet_amount"] += each_bet?.money;
       }
       else if("3" === each_bet?.bet){
-        bet_data["number_game"]["three_bet_total_amount"] += 1;
+        bet_data["number_game"]["three_bet_total_count"] += 1;
         bet_data["number_game"]["three_total_bet_amount"] += each_bet?.money;
       }
       else if("4" === each_bet?.bet){
-        bet_data["number_game"]["four_bet_total_amount"] += 1;
+        bet_data["number_game"]["four_bet_total_count"] += 1;
         bet_data["number_game"]["four_total_bet_amount"] += each_bet?.money;
       }
       else if("5" === each_bet?.bet){
-        bet_data["number_game"]["five_bet_total_amount"] += 1;
+        bet_data["number_game"]["five_bet_total_count"] += 1;
         bet_data["number_game"]["five_total_bet_amount"] += each_bet?.money;
       }
       else if("6" === each_bet?.bet){
-        bet_data["number_game"]["six_bet_total_amount"] += 1;
+        bet_data["number_game"]["six_bet_total_count"] += 1;
         bet_data["number_game"]["six_total_bet_amount"] += each_bet?.money;
       }
       else if("7" === each_bet?.bet){
-        bet_data["number_game"]["seven_bet_total_amount"] += 1;
+        bet_data["number_game"]["seven_bet_total_count"] += 1;
         bet_data["number_game"]["seven_total_bet_amount"] += each_bet?.money;
       }
       else if("8" === each_bet?.bet){
-        bet_data["number_game"]["eight_bet_total_amount"] += 1;
+        bet_data["number_game"]["eight_bet_total_count"] += 1;
         bet_data["number_game"]["eight_total_bet_amount"] += each_bet?.money;
       }
       else if("9" === each_bet?.bet){
-        bet_data["number_game"]["nine_bet_total_amount"] += 1;
+        bet_data["number_game"]["nine_bet_total_count"] += 1;
         bet_data["number_game"]["nine_total_bet_amount"] += each_bet?.money;
       }
     })
@@ -3288,6 +3288,610 @@ async function getBetList5D(req,res){
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 }
+
+
+/**
+ * Function to get the bet list of k3 game total
+ * @param {*} req 
+ * @param {*} res 
+ */
+async function getBetListk3Total(req,res){
+  try {
+    // and rest update with status = 2
+    const game = Number(req.params.game);
+
+    // checking if any of the key is missing
+    if (!game) {
+      throw new Error(
+        " Game is required.",
+      );
+    }
+
+    // checking if the game_type is within this then only spliting the value
+    if (![1 ,3 , 5 , 10].includes(game)) {
+      throw new Error("Invalid game type.");
+    }
+
+
+    // Fetching the period current bet period
+    const [k3] = await connection.query(
+      `SELECT * FROM k3 WHERE status = 0 AND game = ${game} ORDER BY id DESC LIMIT 2`
+    );
+
+    let k3Info = k3[0]; // give the current bet period
+    console.log("k3Info", k3Info);
+  
+    /**
+     * 1. get all the bet with repect to the current period id 
+     * 2. make a object {
+      *                   "big_small_game":{
+                                              "big_bet_total_count" : 0,
+                                              "big_total_bet_amount" : 0,
+                                              "small_bet_total_count" : 0,
+                                              "small_total_bet_amount" : 0,
+                                           },
+                          "odd_even_game": {
+                                              "odd_bet_total_count" : 0,
+                                              "odd_total_bet_amount" : 0,
+                                              "even_bet_total_count" : 0,
+                                              "even_total_bet_amount" : 0,
+                                            },
+                          "number_game" :  {
+                                              "three_bet_total_count" : 0,
+                                              "three_total_bet_amount" : 0,
+                                              "four_bet_total_count" : 0,
+                                              "four_total_bet_amount" : 0,
+                                              "five_bet_total_count" : 0,
+                                              "five_total_bet_amount" : 0,
+                                              "six_bet_total_count" : 0,
+                                              "six_total_bet_amount" : 0,
+                                              "seven_bet_total_count" : 0,
+                                              "seven_total_bet_amount" : 0,
+                                              "eight_bet_total_count" : 0,
+                                              "eight_total_bet_amount" : 0,
+                                              "nine_bet_total_count" : 0,
+                                              "nine_total_bet_amount" : 0,
+                                              "ten_bet_total_count" : 0,
+                                              "ten_total_bet_amount" : 0,
+                                              "eleven_bet_total_count" : 0,
+                                              "eleven_total_bet_amount" : 0,
+                                              "twelve_bet_total_count" : 0,
+                                              "twelve_total_bet_amount" : 0,
+                                              "thirteen_bet_total_count" : 0,
+                                              "thirteen_total_bet_amount" : 0,
+                                              "fourteen_bet_total_count" : 0,
+                                              "fourteen_total_bet_amount" : 0,
+                                              "fifteen_bet_total_count" : 0,
+                                              "fifteen_total_bet_amount" : 0,
+                                              "sixteen_bet_total_count" : 0,
+                                              "sixteen_total_bet_amount" : 0,
+                                              "seventeen_bet_total_count" : 0,
+                                              "seventeen_total_bet_amount" : 0,
+                                              "eighteen_bet_total_count" : 0,
+                                              "eighteen_total_bet_amount" : 0,
+                                            },
+     *                  }
+     * 3. filter out each of the bet like "b" ,"s" .. etc from the current period 
+     * 4. assign the object with the respective count of bet and the total amount of bet bid on that bet
+     */
+
+    // Fetching the period
+    const [all_k3_bet] = await connection.query(
+      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
+      [k3Info?.period, game] // Ensure stage and game variables are defined
+    );
+  
+
+     let total_bet_data = {
+        "big_small_game" :{
+                            "big_bet_total_count" : 0,
+                            "big_total_bet_amount" : 0,
+                            "small_bet_total_count" : 0,
+                            "small_total_bet_amount" : 0,
+                          },
+        "odd_even_game": {
+                            "odd_bet_total_count" : 0,
+                            "odd_total_bet_amount" : 0,
+                            "even_bet_total_count" : 0,
+                            "even_total_bet_amount" : 0,
+                          },
+        "number_game" :  {
+                            "three_bet_total_count" : 0,
+                            "three_total_bet_amount" : 0,
+                            "four_bet_total_count" : 0,
+                            "four_total_bet_amount" : 0,
+                            "five_bet_total_count" : 0,
+                            "five_total_bet_amount" : 0,
+                            "six_bet_total_count" : 0,
+                            "six_total_bet_amount" : 0,
+                            "seven_bet_total_count" : 0,
+                            "seven_total_bet_amount" : 0,
+                            "eight_bet_total_count" : 0,
+                            "eight_total_bet_amount" : 0,
+                            "nine_bet_total_count" : 0,
+                            "nine_total_bet_amount" : 0,
+                            "ten_bet_total_count" : 0,
+                            "ten_total_bet_amount" : 0,
+                            "eleven_bet_total_count" : 0,
+                            "eleven_total_bet_amount" : 0,
+                            "twelve_bet_total_count" : 0,
+                            "twelve_total_bet_amount" : 0,
+                            "thirteen_bet_total_count" : 0,
+                            "thirteen_total_bet_amount" : 0,
+                            "fourteen_bet_total_count" : 0,
+                            "fourteen_total_bet_amount" : 0,
+                            "fifteen_bet_total_count" : 0,
+                            "fifteen_total_bet_amount" : 0,
+                            "sixteen_bet_total_count" : 0,
+                            "sixteen_total_bet_amount" : 0,
+                            "seventeen_bet_total_count" : 0,
+                            "seventeen_total_bet_amount" : 0,
+                            "eighteen_bet_total_count" : 0,
+                            "eighteen_total_bet_amount" : 0,
+                          },
+      }
+    
+
+    
+     // looping through all the bet to update the count of bet and amount total of ecah bet
+     all_k3_bet.forEach((each_bet) => {
+      // check if each_bet.bet === "b" update the bet_data object with the respective count and amount
+      // For big small game
+      if("b" === each_bet?.bet){
+        total_bet_data["big_small_game"]["big_bet_total_count"] += 1;
+        total_bet_data["big_small_game"]["big_total_bet_amount"] += each_bet?.money;
+      }
+      else if("s" === each_bet?.bet){
+        total_bet_data["big_small_game"]["small_bet_total_count"] += 1;
+        total_bet_data["big_small_game"]["small_total_bet_amount"] += each_bet?.money;
+      }
+      // For odd even game 
+      else if("l" === each_bet?.bet){
+        total_bet_data["odd_even_game"]["odd_bet_total_count"] += 1;
+        total_bet_data["odd_even_game"]["odd_total_bet_amount"] += each_bet?.money;
+      }
+      else if("c" === each_bet?.bet){
+        total_bet_data["odd_even_game"]["even_bet_total_count"] += 1;
+        total_bet_data["odd_even_game"]["even_total_bet_amount"] += each_bet?.money;
+      }
+      // For number game
+      else if("3" === each_bet?.bet){
+        total_bet_data["number_game"]["three_bet_total_count"] += 1;
+        total_bet_data["number_game"]["three_total_bet_amount"] += each_bet?.money;
+      }
+      else if("4" === each_bet?.bet){
+        total_bet_data["number_game"]["four_bet_total_count"] += 1;
+        total_bet_data["number_game"]["four_total_bet_amount"] += each_bet?.money;
+      }
+      else if("5" === each_bet?.bet){
+        total_bet_data["number_game"]["five_bet_total_count"] += 1;
+        total_bet_data["number_game"]["five_total_bet_amount"] += each_bet?.money;
+      }
+      else if("6" === each_bet?.bet){
+        total_bet_data["number_game"]["six_bet_total_count"] += 1;
+        total_bet_data["number_game"]["six_total_bet_amount"] += each_bet?.money;
+      }
+      else if("7" === each_bet?.bet){
+        total_bet_data["number_game"]["seven_bet_total_count"] += 1;
+        total_bet_data["number_game"]["seven_total_bet_amount"] += each_bet?.money;
+      }
+      else if("8" === each_bet?.bet){
+        total_bet_data["number_game"]["eight_bet_total_count"] += 1;
+        total_bet_data["number_game"]["eight_total_bet_amount"] += each_bet?.money;
+      }
+      else if("9" === each_bet?.bet){
+        total_bet_data["number_game"]["nine_bet_total_count"] += 1;
+        total_bet_data["number_game"]["nine_total_bet_amount"] += each_bet?.money;
+      }
+      else if("10" === each_bet?.bet){
+        total_bet_data["number_game"]["ten_bet_total_count"] += 1;
+        total_bet_data["number_game"]["ten_total_bet_amount"] += each_bet?.money;
+      }
+      else if("11" === each_bet?.bet){
+        total_bet_data["number_game"]["eleven_bet_total_count"] += 1;
+        total_bet_data["number_game"]["eleven_total_bet_amount"] += each_bet?.money;
+      }
+      else if("12" === each_bet?.bet){
+        total_bet_data["number_game"]["twelve_bet_total_count"] += 1;
+        total_bet_data["number_game"]["twelve_total_bet_amount"] += each_bet?.money;
+      }
+      else if("13" === each_bet?.bet){
+        total_bet_data["number_game"]["thirteen_bet_total_count"] += 1;
+        total_bet_data["number_game"]["thirteen_total_bet_amount"] += each_bet?.money;
+      }
+      else if("14" === each_bet?.bet){
+        total_bet_data["number_game"]["fourteen_bet_total_count"] += 1;
+        total_bet_data["number_game"]["fourteen_total_bet_amount"] += each_bet?.money;
+      }
+      else if("15" === each_bet?.bet){
+        total_bet_data["number_game"]["fifteen_bet_total_count"] += 1;
+        total_bet_data["number_game"]["fifteen_total_bet_amount"] += each_bet?.money;
+      }
+      else if("16" === each_bet?.bet){
+        total_bet_data["number_game"]["sixteen_bet_total_count"] += 1;
+        total_bet_data["number_game"]["sixteen_total_bet_amount"] += each_bet?.money;
+      }
+      else if("17" === each_bet?.bet){
+        total_bet_data["number_game"]["seventeen_bet_total_count"] += 1;
+        total_bet_data["number_game"]["seventeen_total_bet_amount"] += each_bet?.money;
+      }
+      else if("18" === each_bet?.bet){
+        total_bet_data["number_game"]["eightteen_bet_total_count"] += 1;
+        total_bet_data["number_game"]["sixteen_total_bet_amount"] += each_bet?.money;
+      }
+    })
+
+    // sending the response with the bet data
+    res
+    .status(200)
+    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+
+  } catch (err) {
+    console.error("Error fetch user result_5d table:", err.message);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+}
+
+
+
+/**
+ * Function to get the bet list of k3 game two-same
+ * @param {*} req 
+ * @param {*} res 
+ */
+async function getBetListk3TwoSame(req,res){
+  try {
+    // and rest update with status = 2
+    const game = Number(req.params.game);
+
+    // checking if any of the key is missing
+    if (!game) {
+      throw new Error(
+        " Game is required.",
+      );
+    }
+
+    // checking if the game_type is within this then only spliting the value
+    if (![1 ,3 , 5 , 10].includes(game)) {
+      throw new Error("Invalid game type.");
+    }
+
+
+    // Fetching the period current bet period
+    const [k3] = await connection.query(
+      `SELECT * FROM k3 WHERE status = 0 AND game = ${game} ORDER BY id DESC LIMIT 2`
+    );
+
+    let k3Info = k3[0]; // give the current bet period
+    console.log("k3Info", k3Info);
+  
+    /**
+     * 1. get all the bet with repect to the current period id 
+     * 2. make a object {
+                            "first_game" :{
+                                                "eleven_bet_total_count" : 0,
+                                                "eleven_total_bet_amount" : 0,
+                                                "twenty_two_bet_total_count" : 0,
+                                                "twenty_two_total_bet_amount" : 0,
+                                                "thirthy_three_bet_total_count" : 0,
+                                                "thirthy_three_total_bet_amount" : 0,
+                                                "fourty_four_bet_total_count" : 0,
+                                                "fourty_four_total_bet_amount" : 0,
+                                                "fifty_five_bet_total_count" : 0,
+                                                "fifty_five_total_bet_amount" : 0,
+                                                "sixty_six_bet_total_count" : 0,
+                                                "sixty_six_total_bet_amount" : 0,
+                                              },
+                            "second_game" :  {
+                                                "eleven_bet_total_count" : 0,
+                                                "eleven_total_bet_amount" : 0,
+                                                "twenty_two_bet_total_count" : 0,
+                                                "twenty_two_total_bet_amount" : 0,
+                                                "thirthy_three_bet_total_count" : 0,
+                                                "thirthy_three_total_bet_amount" : 0,
+                                                "fourty_four_bet_total_count" : 0,
+                                                "fourty_four_total_bet_amount" : 0,
+                                                "fifty_five_bet_total_count" : 0,
+                                                "fifty_five_total_bet_amount" : 0,
+                                                "sixty_six_bet_total_count" : 0,
+                                                "sixty_six_total_bet_amount" : 0,
+                                                "one_bet_total_count" : 0,
+                                                "one_total_bet_amount" : 0,
+                                                "two_bet_total_count" : 0,
+                                                "two_total_bet_amount" : 0,
+                                                "three_bet_total_count" : 0,
+                                                "three_total_bet_amount" : 0,
+                                                "four_bet_total_count" : 0,
+                                                "four_total_bet_amount" : 0,
+                                                "five_bet_total_count" : 0,
+                                                "five_total_bet_amount" : 0,
+                                                "six_bet_total_count" : 0,
+                                                "six_total_bet_amount" : 0,
+                                              },
+                          }
+     *                  }
+     * 3. filter out each of the bet like "b" ,"s" .. etc from the current period 
+     * 4. assign the object with the respective count of bet and the total amount of bet bid on that bet
+     */
+
+    // Fetching the period
+    const [all_k3_bet] = await connection.query(
+      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
+      [k3Info?.period, game] // Ensure stage and game variables are defined
+    );
+  
+
+     let total_bet_data = {
+                            "first_game" :{
+                                                "eleven_bet_total_count" : 0,
+                                                "eleven_total_bet_amount" : 0,
+                                                "twenty_two_bet_total_count" : 0,
+                                                "twenty_two_total_bet_amount" : 0,
+                                                "thirthy_three_bet_total_count" : 0,
+                                                "thirthy_three_total_bet_amount" : 0,
+                                                "fourty_four_bet_total_count" : 0,
+                                                "fourty_four_total_bet_amount" : 0,
+                                                "fifty_five_bet_total_count" : 0,
+                                                "fifty_five_total_bet_amount" : 0,
+                                                "sixty_six_bet_total_count" : 0,
+                                                "sixty_six_total_bet_amount" : 0,
+                                              },
+                            "second_game" :  {
+                                                "eleven_bet_total_count" : 0,
+                                                "eleven_total_bet_amount" : 0,
+                                                "twenty_two_bet_total_count" : 0,
+                                                "twenty_two_total_bet_amount" : 0,
+                                                "thirthy_three_bet_total_count" : 0,
+                                                "thirthy_three_total_bet_amount" : 0,
+                                                "fourty_four_bet_total_count" : 0,
+                                                "fourty_four_total_bet_amount" : 0,
+                                                "fifty_five_bet_total_count" : 0,
+                                                "fifty_five_total_bet_amount" : 0,
+                                                "sixty_six_bet_total_count" : 0,
+                                                "sixty_six_total_bet_amount" : 0,
+                                                "one_bet_total_count" : 0,
+                                                "one_total_bet_amount" : 0,
+                                                "two_bet_total_count" : 0,
+                                                "two_total_bet_amount" : 0,
+                                                "three_bet_total_count" : 0,
+                                                "three_total_bet_amount" : 0,
+                                                "four_bet_total_count" : 0,
+                                                "four_total_bet_amount" : 0,
+                                                "five_bet_total_count" : 0,
+                                                "five_total_bet_amount" : 0,
+                                                "six_bet_total_count" : 0,
+                                                "six_total_bet_amount" : 0,
+                                              },
+                          }
+    
+     // looping through all the bet to update the count of bet and amount total of ecah bet
+     all_k3_bet.forEach((each_bet) => {
+      // For first game
+      if("11@" === each_bet?.bet){
+        total_bet_data["first_game"]["eleven_bet_total_count"] += 1;
+        total_bet_data["first_game"]["eleven_total_bet_amount"] += each_bet?.money;
+      }
+      else if("22@" === each_bet?.bet){
+        total_bet_data["first_game"]["twenty_two_bet_total_count"] += 1;
+        total_bet_data["first_game"]["twenty_two_total_bet_amount"] += each_bet?.money;
+      }
+      else if("33@" === each_bet?.bet){
+        total_bet_data["first_game"]["thirthy_three_bet_total_count"] += 1;
+        total_bet_data["first_game"]["thirthy_three_total_bet_amount"] += each_bet?.money;
+      }
+      else if("44@" === each_bet?.bet){
+        total_bet_data["first_game"]["fourty_four_bet_total_count"] += 1;
+        total_bet_data["first_game"]["fourty_four_total_bet_amount"] += each_bet?.money;
+      }
+      else if("55@" === each_bet?.bet){
+        total_bet_data["first_game"]["fifty_five_bet_total_count"] += 1;
+        total_bet_data["first_game"]["fifty_five_total_bet_amount"] += each_bet?.money;
+      }
+      else if("66@" === each_bet?.bet){
+        total_bet_data["first_game"]["sixty_six_bet_total_count"] += 1;
+        total_bet_data["first_game"]["sixty_six_total_bet_amount"] += each_bet?.money;
+      }
+      // for second game 
+      else if("11#@" === each_bet?.bet){
+        total_bet_data["second_game"]["eleven_bet_total_count"] += 1;
+        total_bet_data["second_game"]["eleven_total_bet_amount"] += each_bet?.money;
+      }
+      else if("22#@" === each_bet?.bet){
+        total_bet_data["second_game"]["twenty_two_bet_total_count"] += 1;
+        total_bet_data["second_game"]["twenty_two_total_bet_amount"] += each_bet?.money;
+      }
+      else if("33#@" === each_bet?.bet){
+        total_bet_data["second_game"]["thirthy_three_bet_total_count"] += 1;
+        total_bet_data["second_game"]["thirthy_three_total_bet_amount"] += each_bet?.money;
+      }
+      else if("44#@" === each_bet?.bet){
+        total_bet_data["second_game"]["fourty_four_bet_total_count"] += 1;
+        total_bet_data["second_game"]["fourty_four_total_bet_amount"] += each_bet?.money;
+      }
+      else if("55#@" === each_bet?.bet){
+        total_bet_data["second_game"]["fifty_five_bet_total_count"] += 1;
+        total_bet_data["second_game"]["fifty_five_total_bet_amount"] += each_bet?.money;
+      }
+      else if("66#@" === each_bet?.bet){
+        total_bet_data["second_game"]["sixty_six_bet_total_count"] += 1;
+        total_bet_data["second_game"]["sixty_six_total_bet_amount"] += each_bet?.money;
+      }
+      else if("1#@" === each_bet?.bet){
+        total_bet_data["second_game"]["one_bet_total_count"] += 1;
+        total_bet_data["second_game"]["one_total_bet_amount"] += each_bet?.money;
+      }
+      else if("2#@" === each_bet?.bet){
+        total_bet_data["second_game"]["two_bet_total_count"] += 1;
+        total_bet_data["second_game"]["two_total_bet_amount"] += each_bet?.money;
+      }
+      else if("3#@" === each_bet?.bet){
+        total_bet_data["second_game"]["three_bet_total_count"] += 1;
+        total_bet_data["second_game"]["three_total_bet_amount"] += each_bet?.money;
+      }
+      else if("4#@" === each_bet?.bet){
+        total_bet_data["second_game"]["four_bet_total_count"] += 1;
+        total_bet_data["second_game"]["four_total_bet_amount"] += each_bet?.money;
+      }
+      else if("5#@" === each_bet?.bet){
+        total_bet_data["second_game"]["five_bet_total_count"] += 1;
+        total_bet_data["second_game"]["five_total_bet_amount"] += each_bet?.money;
+      }
+      else if("6#@" === each_bet?.bet){
+        total_bet_data["second_game"]["six_bet_total_count"] += 1;
+        total_bet_data["second_game"]["six_total_bet_amount"] += each_bet?.money;
+      }
+    })
+
+    // sending the response with the bet data
+    res
+    .status(200)
+    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+
+  } catch (err) {
+    console.error("Error fetch user result_5d table:", err.message);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+}
+
+
+/**
+ * Function to get the bet list of k3 game three-same
+ * @param {*} req 
+ * @param {*} res 
+ */
+async function getBetListk3ThreeSame(req,res){
+  try {
+    // and rest update with status = 2
+    const game = Number(req.params.game);
+
+    // checking if any of the key is missing
+    if (!game) {
+      throw new Error(
+        " Game is required.",
+      );
+    }
+
+    // checking if the game_type is within this then only spliting the value
+    if (![1 ,3 , 5 , 10].includes(game)) {
+      throw new Error("Invalid game type.");
+    }
+
+
+    // Fetching the period current bet period
+    const [k3] = await connection.query(
+      `SELECT * FROM k3 WHERE status = 0 AND game = ${game} ORDER BY id DESC LIMIT 2`
+    );
+
+    let k3Info = k3[0]; // give the current bet period
+    console.log("k3Info", k3Info);
+  
+    /**
+     * 1. get all the bet with repect to the current period id 
+     * 2. make a object {
+                            "first_game" :  {
+                                              "one_hundred_eleven_bet_total_count" : 0,
+                                              "one_hundred_eleven_total_bet_amount" : 0,
+                                              "two_hundred_twenty_two_bet_total_count" : 0,
+                                              "two_hundred_twenty_two_total_bet_amount" : 0,
+                                              "three_hundred_thirthy_three_bet_total_count" : 0,
+                                              "three_hundred_thirthy_three_total_bet_amount" : 0,
+                                              "four_hundred_fourty_four_bet_total_count" : 0,
+                                              "four_hundred_fourty_four_total_bet_amount" : 0,
+                                              "five_hundred_fifty_five_bet_total_count" : 0,
+                                              "five_hundred_fifty_five_total_bet_amount" : 0,
+                                              "six_hundred_sixty_six_bet_total_count" : 0,
+                                              "six_hundred_sixty_six_total_bet_amount" : 0,
+                                            },
+                            "second_game" : {
+                                              "three_same_bet_total_count" : 0,
+                                              "three_same_total_bet_amount" : 0,
+                                            },
+                          }
+     *                  }
+     * 3. filter out each of the bet like "b" ,"s" .. etc from the current period 
+     * 4. assign the object with the respective count of bet and the total amount of bet bid on that bet
+     */
+
+    // Fetching the period
+    const [all_k3_bet] = await connection.query(
+      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
+      [k3Info?.period, game] // Ensure stage and game variables are defined
+    );
+  
+
+     let total_bet_data = {
+                            "first_game" :  {
+                                              "one_hundred_eleven_bet_total_count" : 0,
+                                              "one_hundred_eleven_total_bet_amount" : 0,
+                                              "two_hundred_twenty_two_bet_total_count" : 0,
+                                              "two_hundred_twenty_two_total_bet_amount" : 0,
+                                              "three_hundred_thirthy_three_bet_total_count" : 0,
+                                              "three_hundred_thirthy_three_total_bet_amount" : 0,
+                                              "four_hundred_fourty_four_bet_total_count" : 0,
+                                              "four_hundred_fourty_four_total_bet_amount" : 0,
+                                              "five_hundred_fifty_five_bet_total_count" : 0,
+                                              "five_hundred_fifty_five_total_bet_amount" : 0,
+                                              "six_hundred_sixty_six_bet_total_count" : 0,
+                                              "six_hundred_sixty_six_total_bet_amount" : 0,
+                                            },
+                            "second_game" : {
+                                              "three_same_bet_total_count" : 0,
+                                              "three_same_total_bet_amount" : 0,
+                                            },
+              
+                  }
+    
+     // looping through all the bet to update the count of bet and amount total of ecah bet
+     all_k3_bet.forEach((each_bet) => {
+      // For first game
+      if("111@" === each_bet?.bet){
+        total_bet_data["first_game"]["one_hundred_eleven_bet_total_count"] += 1;
+        total_bet_data["first_game"]["one_hundred_eleven_total_bet_amount"] += each_bet?.money;
+      }
+      else if("222@" === each_bet?.bet){
+        total_bet_data["first_game"]["two_hundred_twenty_two_bet_total_count"] += 1;
+        total_bet_data["first_game"]["two_hundred_twenty_two_total_bet_amount"] += each_bet?.money;
+      }
+      else if("333@" === each_bet?.bet){
+        total_bet_data["first_game"]["three_hundred_thirthy_three_bet_total_count"] += 1;
+        total_bet_data["first_game"]["three_hundred_thirthy_three_total_bet_amount"] += each_bet?.money;
+      }
+      else if("444@" === each_bet?.bet){
+        total_bet_data["first_game"]["four_hundred_fourty_four_bet_total_count"] += 1;
+        total_bet_data["first_game"]["four_hundred_fourty_four_total_bet_amount"] += each_bet?.money;
+      }
+      else if("555@" === each_bet?.bet){
+        total_bet_data["first_game"]["five_hundred_fifty_five_bet_total_count"] += 1;
+        total_bet_data["first_game"]["five_hundred_fifty_five_total_bet_amount"] += each_bet?.money;
+      }
+      else if("666@" === each_bet?.bet){
+        total_bet_data["first_game"]["six_hundred_sixty_six_bet_total_count"] += 1;
+        total_bet_data["first_game"]["six_hundred_sixty_six_total_bet_amount"] += each_bet?.money;
+      }
+      // for second game 
+      else if("@3" === each_bet?.bet){
+        total_bet_data["second_game"]["three_same_bet_total_count"] += 1;
+        total_bet_data["second_game"]["three_same_total_bet_amount"] += each_bet?.money;
+      }
+    })
+
+    // sending the response with the bet data
+    res
+    .status(200)
+    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+
+  } catch (err) {
+    console.error("Error fetch user result_5d table:", err.message);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+}
+
+
+
+
+
+
+
 
 const adminController = {
   adminPage,
@@ -3355,7 +3959,10 @@ const adminController = {
   updateQrcodeImage,
   handleGameWin,
   handleGameWin5D,
-  getBetList5D
+  getBetList5D,
+  getBetListk3Total,
+  getBetListk3TwoSame,
+  getBetListk3ThreeSame
 };
 
 export default adminController;

@@ -887,6 +887,25 @@ router.get(  // For 5D game bet list
   adminController.getBetList5D,
 ); 
 
+// ["total", "three-same", "unlike", "two-same"]
+router.get(  // For 5D game bet list
+  "/api/webapi/admin/get_bet_list_k3/game/total",
+  adminController.middlewareAdminController,
+  adminController.getBetListk3Total,
+); 
+// ["total", "three-same", "unlike", "two-same"]
+router.get(  // For 5D game bet list
+  "/api/webapi/admin/get_bet_list_k3/game/two_same",
+  adminController.middlewareAdminController,
+  adminController.getBetListk3TwoSame,
+); 
+// ["total", "three-same", "unlike", "two-same"]
+router.get(  // For 5D game bet list
+  "/api/webapi/admin/get_bet_list_k3/game/three_same",
+  adminController.middlewareAdminController,
+  adminController.getBetListk3ThreeSame,
+); 
+
 
 router.post(
   "/api/webapi/admin/handle_game_win",
