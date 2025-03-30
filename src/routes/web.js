@@ -905,6 +905,12 @@ router.get(  // For 5D game bet list
   adminController.middlewareAdminController,
   adminController.getBetListk3ThreeSame,
 ); 
+// ["total", "three-same", "unlike", "two-same"]
+router.get(  // For 5D game bet list
+  "/api/webapi/admin/get_bet_list_k3/:game/unlike",
+  adminController.middlewareAdminController,
+  adminController.getBetListk3Unlike,
+); 
 
 
 router.post(

@@ -3888,6 +3888,99 @@ async function getBetListk3ThreeSame(req,res){
 
 
 
+/**
+ * Function to get the bet list of k3 game unlike
+ * @param {*} req 
+ * @param {*} res 
+ */
+async function getBetListk3Unlike(req,res){
+  try {
+    // and rest update with status = 2
+    const game = Number(req.params.game);
+
+    // checking if any of the key is missing
+    if (!game) {
+      throw new Error(
+        " Game is required.",
+      );
+    }
+
+    // checking if the game_type is within this then only spliting the value
+    if (![1 ,3 , 5 , 10].includes(game)) {
+      throw new Error("Invalid game type.");
+    }
+
+
+    // Fetching the period current bet period
+    const [k3] = await connection.query(
+      `SELECT * FROM k3 WHERE status = 0 AND game = ${game} ORDER BY id DESC LIMIT 2`
+    );
+
+    let k3Info = k3[0]; // give the current bet period
+    console.log("k3Info", k3Info);
+  
+    /**
+     * 1. get all the bet with repect to the current period id 
+     * 2. make a object {
+                            "first_game" :  {
+                                              "one_hundred_eleven_bet_total_count" : 0,
+                                              "one_hundred_eleven_total_bet_amount" : 0,
+                                              "two_hundred_twenty_two_bet_total_count" : 0,
+                                              "two_hundred_twenty_two_total_bet_amount" : 0,
+                                              "three_hundred_thirthy_three_bet_total_count" : 0,
+                                              "three_hundred_thirthy_three_total_bet_amount" : 0,
+                                              "four_hundred_fourty_four_bet_total_count" : 0,
+                                              "four_hundred_fourty_four_total_bet_amount" : 0,
+                                              "five_hundred_fifty_five_bet_total_count" : 0,
+                                              "five_hundred_fifty_five_total_bet_amount" : 0,
+                                              "six_hundred_sixty_six_bet_total_count" : 0,
+                                              "six_hundred_sixty_six_total_bet_amount" : 0,
+                                            },
+                            "second_game" : {
+                                              "three_same_bet_total_count" : 0,
+                                              "three_same_total_bet_amount" : 0,
+                                            },
+                          }
+     *                  }
+     * 3. filter out each of the bet like "b" ,"s" .. etc from the current period 
+     * 4. assign the object with the respective count of bet and the total amount of bet bid on that bet
+     */
+
+    // Fetching the period
+    const [all_k3_bet] = await connection.query(
+      `SELECT * FROM result_5d WHERE stage = ? AND game = ?`,
+      [k3Info?.period, game] // Ensure stage and game variables are defined
+    );
+  
+     let total_bet_data = {}
+    
+     // looping through all the bet to update the count of bet and amount total of ecah bet
+     all_k3_bet.forEach((each_bet) => {
+      // check if the key is present or not in the object
+      if(total_bet_data[each_bet?.bet]){ // present then update the object
+        total_bet_data[each_bet?.bet]["bet_total_count"] += 1;
+        total_bet_data[each_bet?.bet]["total_bet_amount"] += each_bet?.money;
+      }else{ // else create the keys
+        total_bet_data[each_bet?.bet] = {
+          bet_total_count : 1,
+          total_bet_amount : each_bet?.money
+        }
+      }
+    })
+
+    // sending the response with the bet data
+    res
+    .status(200)
+    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+
+  } catch (err) {
+    console.error("Error fetch user result_5d table:", err.message);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+}
+
+
+
 
 
 
@@ -3962,7 +4055,8 @@ const adminController = {
   getBetList5D,
   getBetListk3Total,
   getBetListk3TwoSame,
-  getBetListk3ThreeSame
+  getBetListk3ThreeSame,
+  getBetListk3Unlike
 };
 
 export default adminController;
