@@ -111,6 +111,41 @@
       color: rgb(230, 126, 34);
       font-weight: 600;
     }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #474152;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #474152;
+            font-weight: bold;
+        }
+        td.name-cell {
+            font-weight: bold;
+            background-color: #f9f9f9;
+            text-align: left;
+        }
+        tr:not(:first-child) td {
+            background-color: #474152;
+        }
   </style>
 </head>
 
@@ -166,7 +201,7 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box mb-3">
                   <span class="info-box-icon bg-danger elevation-1">
@@ -215,7 +250,309 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
+           
+            <!-- this start from total -->
+            <div class="container">
+              <div>Total Game</div>
+              <table>
+                  <thead>
+                      <tr>
+                        <td>Operation</td>
+                          <th>Big</th>
+                          <th>Small</th>
+                          <th>Odd</th>
+                          <th>even</th>
+                          <th>0</th>
+                          <th>1</th>
+                          <th>2</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                          <th>6</th>
+                          <th>7</th>
+                          <th>8</th>
+                          <th>9</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Joint count</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                      </tr>
+                      <tr>
+                          <td>Total amount</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                      </tr>
+                      <!-- <tr>
+                          <td class="name-cell">Aman</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                      </tr> -->
+                  </tbody>
+              </table>
+          </div>
+            <!-- this end from total -->
+
+            
+            <!-- this start for two some -->
+            <div class="container">
+              <div>2 some first game</div>
+              <table>
+                  <thead>
+                      <tr>
+                        <td>Operation</td>
+                          <th>11</th>
+                          <th>22</th>
+                          <th>33</th>
+                          <th>44</th>
+                          <th>55</th>
+                          <th>66</th>
+                         
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Joint count</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          
+                        
+                      </tr>
+                      <tr>
+                          <td>Total amount</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          
+                      </tr>
+                    
+                  </tbody>
+              </table>
+          </div>
+          <div class="container">
+            <div>2 some (2nd game)</div>
+            <table>
+                <thead>
+                    <tr>
+                      <td>Operation</td>
+                        <th>11</th>
+                        <th>22</th>
+                        <th>33</th>
+                        <th>44</th>
+                        <th>55</th>
+                        <th>66</th>
+                        <th>1</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                     
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Joint count</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                     
+                    </tr>
+                    <tr>
+                        <td>Total amount</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    
+                    </tr>
+                 
+                </tbody>
+            </table>
+        </div>
+            <!-- this end for two some -->
+
+            <!-- this start for three some -->
+            <div class="container">
+              <div>3 some</div>
+              <table>
+                  <thead>
+                      <tr>
+                        <td>Operation</td>
+                          <th>11</th>
+                          <th>22</th>
+                          <th>33</th>
+                          <th>44</th>
+                          <th>55</th>
+                          <th>66</th>
+                          <th>1</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                          <th>6</th>
+                          <th>Any 3 number</th>
+                       
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Joint count</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                       
+                      </tr>
+                      <tr>
+                          <td>Total amount</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                      
+                      </tr>
+                   
+                  </tbody>
+              </table>
+          </div>
+            <!-- this end for three some -->
+
+            <!-- this start for different -->
+            <div class="container">
+              <div>Different</div>
+              <table>
+                  <thead>
+                      <tr>
+                        <td>Operation</td>
+                          <th>1</th>
+                          <th>2</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                          <th>6</th>
+                          <th>Any 3 number</th>
+                          <th>1</th>
+                          <th>3</th>
+                          <th>4</th>
+                          <th>5</th>
+                          <th>6</th>
+                       
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Joint count</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                       
+                      </tr>
+                      <tr>
+                          <td>Total amount</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                          <td>0</td>
+                      
+                      </tr>
+                   
+                  </tbody>
+              </table>
+          </div>
+            <!-- this end for different -->
+           
             <!-- Main row -->
             <div class="row">
               <!-- Left col -->
