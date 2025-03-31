@@ -949,6 +949,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000);
 });
  </script> -->
+
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Example data structure
+
+    // Function to update the info-box-number elements
+    function updateInfoBoxNumbers(data) {
+      console.log("data", data?.bet_data);
+      
+    }
+
+    // Call the function with the data
+    // updateInfoBoxNumbers(data);
+
+    // Example: Fetch data periodically and update
+    setInterval(() => {
+      fetch("/api/webapi/admin/get_bet_list_k3/1/total")
+        .then((response) => response.json())
+        .then((newData) => {
+          // console.log("Fetched data:", newData);
+          updateInfoBoxNumbers(newData);
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }, 2000); // Update every 10 seconds
+  });
+</script>
+
+
 </body>
 
 </html>

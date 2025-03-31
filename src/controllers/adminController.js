@@ -3524,7 +3524,7 @@ async function getBetListk3Total(req,res){
     // sending the response with the bet data
     res
     .status(200)
-    .json({ success: true, bet_data: bet_data, message: "Bet data fetched successfully" });
+    .json({ success: true, bet_data: total_bet_data, message: "Bet data fetched successfully" });
 
   } catch (err) {
     console.error("Error fetch user result_5d table:", err.message);
