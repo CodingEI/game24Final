@@ -447,7 +447,7 @@ $(".a-b-c-d-e .d5-bet-type").click(function (e) {
   $(`.a-b-c-d-e .d5-bet-type`).removeClass("active");
   $(`.a-b-c-d-e .d5-bet-type[data-join=${info}]`).addClass("active");
   $("#result").attr("join", info);
-  if (info == "total") {
+  if (info == "otal") {
     $(".0-9").hide();
     let check = Number($("#result").attr("list-join"));
     if (!isNaN(check)) {
